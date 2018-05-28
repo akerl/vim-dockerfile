@@ -1,0 +1,12 @@
+item do
+  expected do
+    url_xpath
+    url 'https://github.com/moby/moby/tree-commit/master/contrib/syntax/vim'
+    xpath '//*[@class="commit-tease-sha"]'
+  end
+
+  actual do
+    static
+    set File.read('.commit').chomp
+  end
+end
